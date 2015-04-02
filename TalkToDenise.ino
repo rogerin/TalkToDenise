@@ -18,9 +18,9 @@ byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 
 IPAddress ipServer(192, 168, 1, 177);
 IPAddress ipClient(192, 168, 1, 111);
-IPAddress denise(200, 217, 58, 75);                                     //IP DA DENISE
+//IPAddress denise(200, 217, 58, 75);                                     //IP DA DENISE
 IPAddress gateway(192, 168, 1, 1);
-char ip_denise[] = "200.217.58.75";
+char denise[] = "http://minhascameras2014.dyndns.org";
 
 
 EthernetServer server(92);
