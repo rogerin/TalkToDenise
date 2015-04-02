@@ -70,11 +70,7 @@ void loop()
   
         if(c == '\n' && continua)
         {
-          client.println("HTTP/1.1 200 OK");
-          // IMPORTANTE, ISSO FAZ O ARDUINO RECEBER REQUISIÇÃO AJAX DE OUTRO SERVIDOR E NÃO APENAS LOCAL.
-          client.println("Content-Type: text/javascript");
-          client.println("Access-Control-Allow-Origin: *");
-          client.println();          
+               
          
           int iniciofrente = linha.indexOf("?");
                 
@@ -139,7 +135,12 @@ void loop()
             
          
             
-            
+               client.println("HTTP/1.1 200 OK");
+          // IMPORTANTE, ISSO FAZ O ARDUINO RECEBER REQUISIÇÃO AJAX DE OUTRO SERVIDOR E NÃO APENAS LOCAL.
+          client.println("Content-Type: text/javascript");
+          client.println("Access-Control-Allow-Origin: *");
+          client.print("Connection: close\r\n\r\n");
+          client.println();  
             client.print("dados({ LUZ1 : ");
             client.print(digitalRead(LUZ1));
             client.print(", LUZ2 :  ");
